@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vũ Tấn Phát - Liên hệ | Gửi thông tin trao đổi ngay</title>
+    <meta
+      name="description"
+      content="Liên hệ với Vũ Tấn Phát một cách dễ dàng qua biểu mẫu trực tuyến. Gửi tin nhắn, trao đổi công việc hoặc học tập nhanh chóng qua email hoặc điện thoại ngay."
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>VŨ TẤN PHÁT</h1>
+      <p>Để lại lời nhắn cho tôi.</p>
+    </header>
+    <nav>
+      <a href="index.html">Trang chủ</a> | <a href="about.html">Giới thiệu</a> |
+      <a href="contact.html">Liên hệ</a>
+    </nav>
+
+    <main>
+      <section id="lien-he">
+        <h2>Liên hệ</h2>
+
+        <form action="#" method="POST">
+          <fieldset>
+            <legend>Thông tin cá nhân</legend>
+            <div>
+              <label for="name">Họ và tên:</label>
+              <input type="text" id="name" name="name" required minlength="2" />
+            </div>
+            <br />
+            <div>
+              <label for="email">Email:</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <br />
+            <div>
+              <label for="phone">Số điện thoại:</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                pattern="[0-9]{10,11}"
+              />
+            </div>
+            <br />
+            <div>
+              <label for="dob">Ngày sinh:</label>
+              <input type="date" id="dob" name="dob" />
+            </div>
+            <br />
+            <div>
+              <label for="university">Trường Đại học:</label>
+              <input
+                type="text"
+                id="university"
+                name="university"
+                list="uni-list"
+                placeholder="Chọn hoặc nhập trường..."
+              />
+              <datalist id="uni-list">
+                <option value="Đại học Gia Định"></option>
+                <option value="Đại học Khoa học Tự nhiên"></option>
+                <option value="Đại học Bách Khoa"></option>
+              </datalist>
+            </div>
+          </fieldset>
+          <br />
+          <fieldset>
+            <legend>Nội dung liên hệ</legend>
+            <div>
+              <label for="subject">Chủ đề:</label>
+              <select id="subject" name="subject">
+                <option value="cong-viec">Công việc</option>
+                <option value="hoc-tap">Học tập</option>
+                <option value="khac">Khác</option>
+              </select>
+            </div>
+            <br />
+            <fieldset>
+              <legend>Ưu tiên liên hệ qua:</legend>
+              <input
+                type="radio"
+                id="via-email"
+                name="contact-via"
+                value="email"
+                checked
+              />
+              <label for="via-email">Email</label>
+
+              <input
+                type="radio"
+                id="via-phone"
+                name="contact-via"
+                value="phone"
+              />
+              <label for="via-phone">Điện thoại</label>
+
+              <input
+                type="radio"
+                id="via-zalo"
+                name="contact-via"
+                value="zalo"
+              />
+              <label for="via-zalo">Zalo</label>
+            </fieldset>
+            <br />
+            <div>
+              <label for="message">Lời nhắn:</label><br />
+              <textarea
+                id="message"
+                name="message"
+                rows="5"
+                required
+                minlength="10"
+              ></textarea>
+            </div>
+            <br />
+            <div>
+              <label>
+                <input type="checkbox" name="agree" required />
+                Tôi đồng ý với điều khoản sử dụng
+              </label>
+            </div>
+          </fieldset>
+          <br />
+          <div>
+            <button type="submit">Gửi</button>
+            <button type="reset">Xóa</button>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <address>Liên hệ: 0385****00</address>
+      <p>Ngày cập nhật: <time datetime="2026-06-01">01/06/2026</time></p>
+      <p>&copy; 2026 Vũ Tấn Phát. Mọi bản quyền được bảo lưu.</p>
+    </footer>
+  </body>
+</html>
