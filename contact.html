@@ -3,142 +3,104 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vũ Tấn Phát - Liên hệ | Gửi thông tin trao đổi ngay</title>
-    <meta
-      name="description"
-      content="Liên hệ với Vũ Tấn Phát một cách dễ dàng qua biểu mẫu trực tuyến. Gửi tin nhắn, trao đổi công việc hoặc học tập nhanh chóng qua email hoặc điện thoại ngay."
+    <title>Vũ Tấn Phát - Liên hệ</title>
+    <meta name="description" content="Liên hệ với Vũ Tấn Phát." />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <header>
-      <h1>VŨ TẤN PHÁT</h1>
-      <p>Để lại lời nhắn cho tôi.</p>
+      <div class="navbar">
+        <div class="logo">VŨ TẤN PHÁT</div>
+        <nav class="nav-links">
+          <a href="index.html">Trang chủ</a>
+          <a href="about.html">Giới thiệu</a>
+          <a href="contact.html">Liên hệ</a>
+        </nav>
+      </div>
     </header>
-    <nav>
-      <a href="index.html">Trang chủ</a> | <a href="about.html">Giới thiệu</a> |
-      <a href="contact.html">Liên hệ</a>
-    </nav>
 
-    <main>
-      <section id="lien-he">
-        <h2>Liên hệ</h2>
+    <div
+      class="page-layout"
+      style="grid-template-columns: 1fr; max-width: 800px"
+    >
+      <main>
+        <section id="lien-he" style="text-align: center">
+          <h2>Thông Tin Liên Hệ</h2>
+          <figure>
+            <img
+              src="https://scontent.fsgn5-10.fna.fbcdn.net/v/t39.30808-6/809026780_1610025050719295_2912470922935376693_n.jpg?stp=dst-jpg_tt6&cstp=mx1154x1154&ctp=s1154x1154&_nc_cat=110&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeFvdm_SkHN6KOF-M3bNv09nT3r7A5bYfBVPevsDlth8FVlMpeZRl8clqVoq2hHYH5bRMAPQf955OOcaXjWnUuEs&_nc_ohc=8yWr9vX6FNQQ7kNvwEB3k1Z&_nc_oc=AdpCMDr6mO9VHOatBVlO_hshJFVF6a4mQtM5u2XT4Xi0xnsye-_TINVo5NTPZPeI-nCX29QzF-AkYpcIbA8M-XJG&_nc_zt=23&_nc_ht=scontent.fsgn5-10.fna&_nc_gid=ha2gtLpmlAJrgb5my4OnKQ&_nc_ss=7b2a8&oh=00_AQOH9NePAgMN_-oeGTdU3dtwMyjQ3pDxljQfBFIJysHBRA&oe=6AD3689B"
+              alt="Ảnh chân dung của Vũ Tấn Phát"
+              width="180"
+              height="180"
+            />
+          </figure>
 
-        <form action="#" method="POST">
-          <fieldset>
-            <legend>Thông tin cá nhân</legend>
-            <div>
-              <label for="name">Họ và tên:</label>
-              <input type="text" id="name" name="name" required minlength="2" />
-            </div>
-            <br />
-            <div>
-              <label for="email">Email:</label>
-              <input type="email" id="email" name="email" required />
-            </div>
-            <br />
-            <div>
-              <label for="phone">Số điện thoại:</label>
-              <input
-                type="tel"
-                id="phone"
-                name="phone"
-                pattern="[0-9]{10,11}"
-              />
-            </div>
-            <br />
-            <div>
-              <label for="dob">Ngày sinh:</label>
-              <input type="date" id="dob" name="dob" />
-            </div>
-            <br />
-            <div>
-              <label for="university">Trường Đại học:</label>
-              <input
-                type="text"
-                id="university"
-                name="university"
-                list="uni-list"
-                placeholder="Chọn hoặc nhập trường..."
-              />
-              <datalist id="uni-list">
-                <option value="Đại học Gia Định"></option>
-                <option value="Đại học Khoa học Tự nhiên"></option>
-                <option value="Đại học Bách Khoa"></option>
-              </datalist>
-            </div>
-          </fieldset>
-          <br />
-          <fieldset>
-            <legend>Nội dung liên hệ</legend>
-            <div>
-              <label for="subject">Chủ đề:</label>
-              <select id="subject" name="subject">
-                <option value="cong-viec">Công việc</option>
-                <option value="hoc-tap">Học tập</option>
-                <option value="khac">Khác</option>
-              </select>
-            </div>
-            <br />
-            <fieldset>
-              <legend>Ưu tiên liên hệ qua:</legend>
-              <input
-                type="radio"
-                id="via-email"
-                name="contact-via"
-                value="email"
-                checked
-              />
-              <label for="via-email">Email</label>
+          <p
+            style="
+              font-size: 1.1rem;
+              color: var(--text-muted);
+              margin-bottom: 24px;
+            "
+          >
+            Hãy liên hệ với tôi qua các kênh dưới đây để trao đổi thêm về công
+            việc và học tập.
+          </p>
 
-              <input
-                type="radio"
-                id="via-phone"
-                name="contact-via"
-                value="phone"
-              />
-              <label for="via-phone">Điện thoại</label>
-
-              <input
-                type="radio"
-                id="via-zalo"
-                name="contact-via"
-                value="zalo"
-              />
-              <label for="via-zalo">Zalo</label>
-            </fieldset>
-            <br />
-            <div>
-              <label for="message">Lời nhắn:</label><br />
-              <textarea
-                id="message"
-                name="message"
-                rows="5"
-                required
-                minlength="10"
-              ></textarea>
+          <div
+            class="skills-grid"
+            style="grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 0"
+          >
+            <div class="skill-card" style="padding: 16px">
+              <h4 style="margin-bottom: 8px">📍 Địa chỉ</h4>
+              <p>Lâm Đồng, Việt Nam</p>
             </div>
-            <br />
-            <div>
-              <label>
-                <input type="checkbox" name="agree" required />
-                Tôi đồng ý với điều khoản sử dụng
-              </label>
+            <div class="skill-card" style="padding: 16px">
+              <h4 style="margin-bottom: 8px">📧 Email</h4>
+              <p>
+                <a
+                  href="mailto:phat.vu@example.com"
+                  style="color: var(--primary-color); text-decoration: none"
+                  >phat1st07@gmail.com</a
+                >
+              </p>
             </div>
-          </fieldset>
-          <br />
-          <div>
-            <button type="submit">Gửi</button>
-            <button type="reset">Xóa</button>
+            <div class="skill-card" style="padding: 16px">
+              <h4 style="margin-bottom: 8px">📞 Điện thoại</h4>
+              <p>
+                <a
+                  href="tel:+84123456789"
+                  style="color: var(--primary-color); text-decoration: none"
+                  >0385 405 800</a
+                >
+              </p>
+            </div>
+            <div class="skill-card" style="padding: 16px">
+              <h4 style="margin-bottom: 8px">💻 Mạng xã hội</h4>
+              <p>
+                <a
+                  href="https://github.com/z7phat7z"
+                  target="_blank"
+                  style="color: var(--primary-color); text-decoration: none"
+                  >GitHub Profile</a
+                >
+              </p>
+            </div>
           </div>
-        </form>
-      </section>
-    </main>
+        </section>
+      </main>
+    </div>
 
     <footer>
-      <address>Liên hệ: 0385****00</address>
-      <p>Ngày cập nhật: <time datetime="2026-06-01">01/06/2026</time></p>
-      <p>&copy; 2026 Vũ Tấn Phát. Mọi bản quyền được bảo lưu.</p>
+      <div class="footer-left">
+        <p>&copy; 2026 Vũ Tấn Phát. Mọi bản quyền được bảo lưu.</p>
+      </div>
+      <div class="footer-right">
+        <p>Ngày cập nhật: <time datetime="2026-06-01">01/06/2026</time></p>
+      </div>
     </footer>
   </body>
 </html>

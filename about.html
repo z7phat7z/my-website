@@ -6,139 +6,188 @@
     <title>Vũ Tấn Phát - Giới thiệu | Kỹ năng và Lộ trình học</title>
     <meta
       name="description"
-      content="Tìm hiểu thông tin chi tiết về Vũ Tấn Phát. Xem lộ trình học tập, danh sách các môn học, và các kỹ năng lập trình web cơ bản như HTML, CSS và JavaScript."
+      content="Tìm hiểu thông tin chi tiết về Vũ Tấn Phát."
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap"
+      rel="stylesheet"
     />
     <link rel="stylesheet" href="css/style.css" />
-    <style>
-      table,
-      th,
-      td {
-        border: 1px solid black;
-        border-collapse: collapse;
-        padding: 8px;
-        text-align: left;
-      }
-      th {
-        background-color: #f2f2f2;
-      }
-    </style>
   </head>
   <body>
     <header>
-      <h1>VŨ TẤN PHÁT</h1>
-      <p>Thông chi tiết về bản thân tôi.</p>
+      <div class="navbar">
+        <div class="logo">VŨ TẤN PHÁT</div>
+        <nav class="nav-links">
+          <a href="index.html">Trang chủ</a>
+          <a href="about.html">Giới thiệu</a>
+          <a href="contact.html">Liên hệ</a>
+        </nav>
+      </div>
     </header>
 
-    <nav>
-      <a href="index.html">Trang chủ</a> | <a href="about.html">Giới thiệu</a> |
-      <a href="contact.html">Liên hệ</a>
-    </nav>
-
-    <main>
-      <section id="ve-toi">
-        <h2>Về tôi</h2>
-        <figure>
-          <img
-            src="https://scontent.fsgn2-5.fna.fbcdn.net/v/t39.30808-6/802899692_1606902617698205_6202861628995486895_n.jpg?stp=cp6_dst-jpg_tt6&cstp=mx1284x1284&ctp=s1284x1284&_nc_cat=104&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeHCqiELWimkkeSDmb7WvgBqxhuvtmvxI07GG6-2a_EjTljcMFg1_4Dsqxi8wq9pmm6DboXlF7d1GoAWXwc0HDG7&_nc_ohc=7conEzEI2fQQ7kNvwGoawnP&_nc_oc=AdpBsmMNDt_tntIxTkjovd7gmeA9mmHbIYliLKSTZtPOdn82Wo-RplQvjJTsbqMIOxc&_nc_zt=23&_nc_ht=scontent.fsgn2-5.fna&_nc_gid=-3ZpWW2bYuNo3-mxASrMxw&_nc_ss=7b2a8&oh=00_AQKoQy2iJ5xnUVWiqcyzSdsV9aLwRqgUDAU3DSYdGc5pwg&oe=6AAD3E7E"
-            alt="Ảnh chân dung của Vũ Tấn Phát"
-            width="150"
-            height="150"
-          />
-        </figure>
-
-        <h3>Định nghĩa kỹ năng:</h3>
-        <dl>
-          <dt><strong>HTML</strong></dt>
-          <dd>
-            Ngôn ngữ đánh dấu siêu văn bản, dùng để tạo và cấu trúc nội dung
-            trên trang web.
-          </dd>
-
-          <dt><strong>CSS</strong></dt>
-          <dd>
-            Ngôn ngữ định dạng trang tính, dùng để thiết kế màu sắc, bố cục cho
-            website.
-          </dd>
-
-          <dt><strong>Git</strong></dt>
-          <dd>
-            Hệ thống quản lý phiên bản phân tán, giúp theo dõi thay đổi mã
-            nguồn.
-          </dd>
-        </dl>
-      </section>
-
-      <section id="ky-nang">
-        <h2>Kỹ năng</h2>
+    <div class="page-layout">
+      <aside class="sidebar">
+        <h3>Menu Điều Hướng</h3>
         <ul>
-          <li>HTML5</li>
-          <li>CSS3</li>
-          <li>Git</li>
-          <li>JavaScript</li>
+          <li><a href="#ve-toi">Về tôi</a></li>
+          <li><a href="#ky-nang">Kỹ năng</a></li>
+          <li><a href="#lo-trinh-hoc-tap">Lộ trình học tập</a></li>
+          <li><a href="#mon-hoc">Môn học</a></li>
         </ul>
-      </section>
-      <section id="lo-trinh-hoc-tap">
-        <h2>Lộ trình học tập</h2>
-        <ol>
-          <li>Nền tảng HTML/CSS.</li>
-          <li>Thành thạo JS.</li>
-          <li>Deploy website.</li>
-        </ol>
-      </section>
+      </aside>
 
-      <section id="mon-hoc">
-        <h2>Môn học</h2>
-        <table>
-          <caption>
-            Danh sách các môn học trong học kỳ này
-          </caption>
-          <thead>
-            <tr>
-              <th>Học kỳ</th>
-              <th>Mã môn</th>
-              <th>Tên môn học</th>
-              <th>Số tín chỉ</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td rowspan="3">Học kỳ 1<br />Năm 3</td>
-              <td>WEB101</td>
-              <td>Lập trình Web</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>DB102</td>
-              <td>Cơ sở dữ liệu</td>
-              <td>3</td>
-            </tr>
-            <tr>
-              <td>SE103</td>
-              <td>Công nghệ phần mềm</td>
-              <td>4</td>
-            </tr>
-          </tbody>
-          <tfoot>
-            <tr>
-              <td colspan="3" style="text-align: right">
-                <strong>Tổng:</strong>
-              </td>
-              <td><strong>10</strong></td>
-            </tr>
-          </tfoot>
-        </table>
-      </section>
-    </main>
+      <main>
+        <section id="ve-toi">
+          <h2>Về tôi</h2>
+          <figure>
+            <img
+              src="https://scontent.fsgn5-10.fna.fbcdn.net/v/t39.30808-6/809026780_1610025050719295_2912470922935376693_n.jpg?stp=dst-jpg_tt6&cstp=mx1154x1154&ctp=s1154x1154&_nc_cat=110&_nc_map=urlgen_bucketless&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeFvdm_SkHN6KOF-M3bNv09nT3r7A5bYfBVPevsDlth8FVlMpeZRl8clqVoq2hHYH5bRMAPQf955OOcaXjWnUuEs&_nc_ohc=8yWr9vX6FNQQ7kNvwEB3k1Z&_nc_oc=AdpCMDr6mO9VHOatBVlO_hshJFVF6a4mQtM5u2XT4Xi0xnsye-_TINVo5NTPZPeI-nCX29QzF-AkYpcIbA8M-XJG&_nc_zt=23&_nc_ht=scontent.fsgn5-10.fna&_nc_gid=ha2gtLpmlAJrgb5my4OnKQ&_nc_ss=7b2a8&oh=00_AQOH9NePAgMN_-oeGTdU3dtwMyjQ3pDxljQfBFIJysHBRA&oe=6AD3689B"
+              alt="Ảnh chân dung của Vũ Tấn Phát"
+              width="150"
+              height="150"
+            />
+          </figure>
+
+          <h3
+            style="
+              color: var(--primary-dark);
+              margin-bottom: 12px;
+              font-size: 1.25rem;
+            "
+          >
+            Định nghĩa kỹ năng:
+          </h3>
+          <dl>
+            <div>
+              <dt><strong>HTML</strong></dt>
+              <dd>
+                Ngôn ngữ đánh dấu siêu văn bản, dùng để tạo và cấu trúc nội dung
+                trên trang web.
+              </dd>
+            </div>
+            <div>
+              <dt><strong>CSS</strong></dt>
+              <dd>
+                Ngôn ngữ định dạng trang tính, dùng để thiết kế màu sắc, bố cục
+                cho website.
+              </dd>
+            </div>
+            <div>
+              <dt><strong>Git</strong></dt>
+              <dd>
+                Hệ thống quản lý phiên bản phân tán, giúp theo dõi thay đổi mã
+                nguồn.
+              </dd>
+            </div>
+          </dl>
+        </section>
+
+        <section id="ky-nang">
+          <h2>Kỹ năng của tôi</h2>
+          <div class="skills-grid">
+            <div class="skill-card">
+              <h4>HTML5</h4>
+              <p>Nắm vững thẻ Semantic, Form, Media.</p>
+            </div>
+            <div class="skill-card">
+              <h4>CSS3</h4>
+              <p>Thành thạo Flexbox, Grid và Box Model.</p>
+            </div>
+            <div class="skill-card">
+              <h4>Git</h4>
+              <p>Quản lý source code với GitHub.</p>
+            </div>
+            <div class="skill-card">
+              <h4>JavaScript</h4>
+              <p>Lập trình DOM và xử lý sự kiện.</p>
+            </div>
+          </div>
+        </section>
+
+        <section id="lo-trinh-hoc-tap">
+          <h2>Lộ trình học tập</h2>
+          <ol
+            style="
+              padding-left: 20px;
+              color: var(--text-muted);
+              font-size: 1.1rem;
+              line-height: 1.8;
+            "
+          >
+            <li>Nền tảng HTML/CSS.</li>
+            <li>Thành thạo JS.</li>
+            <li>Deploy website.</li>
+          </ol>
+        </section>
+
+        <section id="mon-hoc">
+          <h2>Môn học học kỳ này</h2>
+          <table>
+            <caption>
+              Danh sách các môn học chi tiết
+            </caption>
+            <thead>
+              <tr>
+                <th>Học kỳ</th>
+                <th>Mã môn</th>
+                <th>Tên môn học</th>
+                <th>Số tín chỉ</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td
+                  rowspan="3"
+                  style="
+                    vertical-align: middle;
+                    font-weight: bold;
+                    color: var(--primary-color);
+                  "
+                >
+                  Học kỳ 1<br />Năm 3
+                </td>
+                <td>WEB101</td>
+                <td>Lập trình Web</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>DB102</td>
+                <td>Cơ sở dữ liệu</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>SE103</td>
+                <td>Công nghệ phần mềm</td>
+                <td>4</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="3" style="text-align: right">
+                  <strong>Tổng tín chỉ:</strong>
+                </td>
+                <td style="color: var(--primary-color)"><strong>10</strong></td>
+              </tr>
+            </tfoot>
+          </table>
+        </section>
+      </main>
+    </div>
 
     <footer>
-      <address>
-        Liên hệ: Lâm Đồng, Việt Nam <br />
-        Email: <a href="mailto:phat.vu@example.com">phat.vu@example.com</a>
-        <br />
-        Điện thoại: <a href="tel:+84123456789">0123 456 789</a>
-      </address>
-      <p>Ngày cập nhật: <time datetime="2026-06-01">01/06/2026</time></p>
-      <p>&copy; 2026 Vũ Tấn Phát. Mọi bản quyền được bảo lưu.</p>
+      <div class="footer-left">
+        <p>&copy; 2026 Vũ Tấn Phát. Mọi bản quyền được bảo lưu.</p>
+      </div>
+      <div class="footer-right">
+        <address>
+          Liên hệ: Lâm Đồng, Việt Nam <br />
+          Email: <a href="mailto:phat1st07@gmail.com">phat.vu@example.com</a
+          ><br />
+          Điện thoại: <a href="tel:+84123456789">0385 405 800</a>
+        </address>
+        <p>Ngày cập nhật: <time datetime="2026-06-01">01/06/2026</time></p>
+      </div>
     </footer>
   </body>
 </html>
