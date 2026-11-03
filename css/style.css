@@ -1,4 +1,4 @@
-/* ==================== PHẦN 2 - BẮT ĐẦU ==================== */
+/* ==================== CÂU 2 - BẮT ĐẦU ==================== */
 *,
 *::before,
 *::after {
@@ -8,179 +8,192 @@
 }
 
 body {
-  font-family: "Inter", Arial, sans-serif;
-  background-color: #f4f7fb;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8fafc;
   color: #1e293b;
   line-height: 1.6;
 }
 
 header {
   background-color: #1a2e5a;
-  color: white;
-  padding: 16px;
+  color: #ffffff;
+  padding: 16px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 header .navbar {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
   flex-direction: column;
   gap: 12px;
 }
 header .navbar h1 {
   font-size: 1.5rem;
-  text-align: center;
 }
-header .navbar p {
-  font-size: 0.9rem;
-  color: #cbd5e1;
-  text-align: center;
-}
-header .navbar nav ul {
-  list-style: none;
+header .navbar nav {
   display: flex;
-  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
   justify-content: center;
-  flex-direction: column;
-  gap: 10px;
 }
-header .navbar nav ul li a {
+header .navbar nav a {
   color: #93c5fd;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 500;
+  transition: color 0.2s;
 }
-header .navbar nav ul li a:hover {
-  color: white;
+header .navbar nav a:hover {
+  color: #ffffff;
   text-decoration: underline;
 }
 
 main {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 16px;
-}
-main section {
-  margin-bottom: 24px;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  padding: 24px;
-}
-main section h2 {
-  margin-bottom: 16px;
-  color: #1a2e5a;
-}
-main .skills-grid {
+  max-width: 1100px;
+  margin: 32px auto;
+  padding: 0 16px;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 16px;
+  gap: 24px;
 }
-main table {
+main section {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+main section h2 {
+  color: #1a2e5a;
+  margin-bottom: 16px;
+  font-size: 1.25rem;
+  border-bottom: 2px solid #e2e8f0;
+  padding-bottom: 8px;
+}
+main section article figure {
+  margin-bottom: 16px;
+  text-align: center;
+}
+main section article figure img {
+  max-width: 150px;
+  height: auto;
+  border-radius: 50%;
+  border: 3px solid #1a2e5a;
+}
+main section article figure figcaption {
+  margin-top: 8px;
+  font-style: italic;
+  color: #64748b;
+}
+main section table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 10px;
+  margin-top: 12px;
 }
-main table th,
-main table td {
+main section table th,
+main section table td {
+  padding: 12px;
   border: 1px solid #cbd5e1;
-  padding: 8px 12px;
   text-align: left;
 }
-main table th {
+main section table th {
   background-color: #1a2e5a;
-  color: white;
+  color: #ffffff;
 }
-main form fieldset {
+main section table tr:nth-child(even) {
+  background-color: #f1f5f9;
+}
+main section form fieldset {
   border: 1px solid #cbd5e1;
   border-radius: 8px;
-  padding: 16px;
-  margin-bottom: 16px;
+  padding: 20px;
 }
-main form fieldset legend {
+main section form fieldset legend {
   font-weight: bold;
   color: #1a2e5a;
   padding: 0 8px;
 }
-main form fieldset div {
-  margin-bottom: 12px;
-}
-main form fieldset div label {
+main section form fieldset label {
   display: block;
+  margin-top: 12px;
   margin-bottom: 4px;
   font-weight: 500;
 }
-main form fieldset div input,
-main form fieldset div textarea,
-main form fieldset div select {
+main section form fieldset input[type="text"],
+main section form fieldset input[type="email"],
+main section form fieldset input[type="tel"],
+main section form fieldset input[type="date"] {
   width: 100%;
-  padding: 8px 12px;
+  padding: 10px;
   border: 1px solid #cbd5e1;
   border-radius: 4px;
   font-size: 1rem;
+  margin-bottom: 8px;
 }
-main form button {
+main section form fieldset button {
+  margin-top: 16px;
+  margin-right: 8px;
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
-  font-weight: 600;
   cursor: pointer;
-  margin-right: 8px;
+  font-weight: bold;
 }
-main form button[type="submit"] {
-  background-color: #3b82f6;
-  color: white;
-}
-main form button[type="submit"]:hover {
+main section form fieldset button[type="submit"] {
   background-color: #2563eb;
+  color: #ffffff;
 }
-main form button[type="reset"] {
+main section form fieldset button[type="submit"]:hover {
+  background-color: #1d4ed8;
+}
+main section form fieldset button[type="reset"] {
   background-color: #e2e8f0;
-  color: #1e293b;
+  color: #475569;
 }
-main form button[type="reset"]:hover {
+main section form fieldset button[type="reset"]:hover {
   background-color: #cbd5e1;
 }
 
 footer {
-  background-color: #1a2e5a;
-  color: white;
   text-align: center;
   padding: 24px;
-  margin-top: 32px;
-}
-footer address {
-  margin-bottom: 8px;
-  font-style: normal;
-}
-footer a {
-  color: #93c5fd;
+  background-color: #0f172a;
+  color: #94a3b8;
+  margin-top: 48px;
+  font-size: 0.9rem;
 }
 
 @media (min-width: 768px) {
-  header {
-    padding: 20px 32px;
-  }
   header .navbar {
     flex-direction: row;
     justify-content: space-between;
   }
-  header .navbar h1,
-  header .navbar p {
-    text-align: left;
-  }
-  header .navbar nav ul {
-    flex-direction: row;
-    gap: 20px;
-  }
   main {
-    padding: 32px 16px;
-  }
-  main .skills-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  main section#about,
+  main section#skills,
+  main section#projects,
+  main section#contact {
+    grid-column: span 2;
   }
 }
 @media (min-width: 1024px) {
-  main .skills-grid {
-    grid-template-columns: repeat(3, 1fr);
+  main {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
+  main section#about {
+    grid-column: span 1;
+  }
+  main section#skills {
+    grid-column: span 1;
+  }
+  main section#projects {
+    grid-column: span 2;
+  }
+  main section#contact {
+    grid-column: span 2;
   }
 }
-/* ==================== PHẦN 2 - KẾT THÚC ==================== */
+/* ==================== CÂU 2 - KẾT THÚC ==================== */
