@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio - Vũ Tấn Phát</title>
+  </head>
+  <body>
+    <header>
+      <h1>Hồ Sơ Cá Nhân</h1>
+      <nav>
+        <a href="#about">Giới thiệu</a> | <a href="#skills">Kỹ năng</a> |
+        <a href="#projects">Dự án</a> |
+        <a href="#contact">Liên hệ</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="about">
+        <article>
+          <h2>Giới thiệu bản thân</h2>
+          <!-- ==================== CÂU 4 (Phần 1) - BẮT ĐẦU ==================== -->
+          <figure>
+            <img
+              src="https://via.placeholder.com/150"
+              alt="Ảnh đại diện của sinh viên Vũ Tấn Phát"
+            />
+            <figcaption>Sinh viên: Vũ Tấn Phát</figcaption>
+          </figure>
+          <!-- ==================== CÂU 4 (Phần 1) - KẾT THÚC ==================== -->
+          <p>
+            Xin chào, tôi là Vũ Tấn Phát, sinh viên chuyên ngành Kỹ thuật phần
+            mềm.
+          </p>
+        </article>
+      </section>
+
+      <section id="skills">
+        <h2>Kỹ năng và Học tập</h2>
+        <table border="1">
+          <thead>
+            <tr>
+              <th>STT</th>
+              <th>Kỹ năng</th>
+              <th>Công nghệ</th>
+              <th>Mức độ</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Thiết kế cấu trúc</td>
+              <td>HTML5</td>
+              <td>Tốt</td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Định dạng giao diện</td>
+              <td>CSS3 / SCSS</td>
+              <td>Khá</td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Lập trình tương tác</td>
+              <td>JavaScript</td>
+              <td>Cơ bản</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="projects">
+        <h2>Dự án đã thực hiện</h2>
+        <!-- Danh sách dự án -->
+      </section>
+
+      <section id="contact">
+        <h2>Liên hệ với tôi</h2>
+        <form action="#" method="POST">
+          <fieldset>
+            <legend>Đăng ký nhận tin</legend>
+            <!-- ==================== CÂU 4 (Phần 2) - BẮT ĐẦU ==================== -->
+            <label for="fullname">Họ và tên: *</label>
+            <input
+              type="text"
+              id="fullname"
+              name="fullname"
+              required
+              minlength="2"
+            /><br /><br />
+
+            <label for="email">Email: *</label>
+            <input type="email" id="email" name="email" required /><br /><br />
+
+            <label for="phone">Số điện thoại: *</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              required
+              pattern="[0-9]{10,11}"
+              title="Nhập 10 hoặc 11 chữ số"
+            /><br /><br />
+
+            <label for="dob">Ngày sinh: *</label>
+            <input type="date" id="dob" name="dob" required /><br /><br />
+            <!-- ==================== CÂU 4 (Phần 2) - KẾT THÚC ==================== -->
+            <button type="submit">Gửi thông tin</button>
+            <button type="reset">Xóa form</button>
+          </fieldset>
+        </form>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Vũ Tấn Phát. Thực hành Lập trình Web.</p>
+    </footer>
+  </body>
+</html>
