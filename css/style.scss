@@ -1,22 +1,242 @@
-# Portfolio Cá Nhân - Vũ Tấn Phát
+$color-primary: #1a2e5a;
+$color-secondary: #f4f7fb;
+$color-text: #1e293b;
+$color-accent: #3b82f6;
+$font-base: "Inter", Arial, sans-serif;
+$border-radius: 8px;
 
-Đây là dự án thực hành môn Lập trình Web. Dự án là một trang web tĩnh cơ bản sử dụng HTML5 semantic và CSS3 để hiển thị thông tin cá nhân, tuân thủ các chuẩn SEO và Accessibility.
+// 4. Kiểm soát Box Model toàn cục
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-## TÁC GIẢ
+body {
+  font-family: $font-base;
+  background-color: $color-secondary;
+  color: $color-text;
+  line-height: 1.6;
+}
 
-- **Họ và tên**: Vũ Tấn Phát
-- **Ngành học**: Kỹ thuật phần mềm
-- **Quê quán**: Lâm Đồng
+// 3. Định nghĩa Mixins (@mixin / @include)
+@mixin card-style($bg: white, $radius: 8px) {
+  background: $bg;
+  border-radius: $radius;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 24px;
+}
 
-## CẤU TRÚC DỰ ÁN
+@mixin flex-center($direction: row, $justify: space-between) {
+  display: flex;
+  align-items: center;
+  justify-content: $justify;
+  flex-direction: $direction;
+}
 
-- `index.html`: Trang chủ giới thiệu sơ lược về bản thân, sở thích và mục tiêu.
-- `about.html`: Trang chứa thông tin chi tiết về kỹ năng, định nghĩa và lộ trình học tập, bảng danh sách môn học.
-- `contact.html`: Biểu mẫu (Form) liên hệ áp dụng HTML5 Validation chặt chẽ, tối ưu trải nghiệm (Accessibility).
-- `css/style.css`: File định dạng CSS cấu trúc Box Model.
+// 2. Header & Navbar (Flexbox - Mobile-first)
+header {
+  background-color: $color-primary;
+  color: white;
+  padding: 16px;
 
-## KỸ THUẬT SỬ DỤNG
+  .navbar {
+    @include flex-center(column, center);
+    gap: 12px;
 
-- HTML5 (Semantic tags, Forms, Datalist, Validation attributes)
-- CSS3 (Reset, Box Model, Typography, Specificity)
-- SEO & Open Graph Tags
+    h1 {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+
+    p {
+      font-size: 0.9rem;
+      color: #cbd5e1;
+      text-align: center;
+    }
+
+    nav {
+      ul {
+        list-style: none;
+        @include flex-center(column, center);
+        gap: 10px;
+
+        li {
+          a {
+            color: #93c5fd;
+            text-decoration: none;
+            font-weight: 600;
+
+            &:hover {
+              color: white;
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// Main Content & CSS Grid
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 16px;
+
+  section {
+    margin-bottom: 24px;
+    @include card-style(); // Sử dụng mixin card-style
+
+    h2 {
+      margin-bottom: 16px;
+      color: $color-primary;
+    }
+  }
+
+  // 2. CSS Grid cho phần lưới kỹ năng / nội dung
+  .skills-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+
+    th,
+    td {
+      border: 1px solid #cbd5e1;
+      padding: 8px 12px;
+      text-align: left;
+    }
+
+    th {
+      background-color: $color-primary;
+      color: white;
+    }
+  }
+
+  form {
+    fieldset {
+      border: 1px solid #cbd5e1;
+      border-radius: $border-radius;
+      padding: 16px;
+      margin-bottom: 16px;
+
+      legend {
+        font-weight: bold;
+        color: $color-primary;
+        padding: 0 8px;
+      }
+
+      div {
+        margin-bottom: 12px;
+
+        label {
+          display: block;
+          margin-bottom: 4px;
+          font-weight: 500;
+        }
+
+        input,
+        textarea,
+        select {
+          width: 100%;
+          padding: 8px 12px;
+          border: 1px solid #cbd5e1;
+          border-radius: 4px;
+          font-size: 1rem;
+        }
+      }
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-right: 8px;
+
+      &[type="submit"] {
+        background-color: $color-accent;
+        color: white;
+
+        &:hover {
+          background-color: #2563eb;
+        }
+      }
+
+      &[type="reset"] {
+        background-color: #e2e8f0;
+        color: $color-text;
+
+        &:hover {
+          background-color: #cbd5e1;
+        }
+      }
+    }
+  }
+}
+
+footer {
+  background-color: $color-primary;
+  color: white;
+  text-align: center;
+  padding: 24px;
+  margin-top: 32px;
+
+  address {
+    margin-bottom: 8px;
+    font-style: normal;
+  }
+
+  a {
+    color: #93c5fd;
+  }
+}
+
+// 3. Media Queries (Mobile-first - Tối thiểu 2 breakpoint: 768px và 1024px)[cite: 11]
+@media (min-width: 768px) {
+  header {
+    padding: 20px 32px;
+
+    .navbar {
+      flex-direction: row;
+      justify-content: space-between;
+
+      h1,
+      p {
+        text-align: left;
+      }
+
+      nav {
+        ul {
+          flex-direction: row;
+          gap: 20px;
+        }
+      }
+    }
+  }
+
+  main {
+    padding: 32px 16px;
+
+    .skills-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  main {
+    .skills-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
