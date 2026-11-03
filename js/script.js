@@ -1,44 +1,117 @@
-let hoTen = "Vũ Tấn Phát";
-let namSinh = 2007;
-let laSinhVien = true;
+// ==================== CÂU 3 - BẮT ĐẦU ====================
 
-let tuoiHienTai = 2026 - namSinh;
-console.log("Tuổi hiện tại của tôi là:", tuoiHienTai);
+// 1. Khai báo mảng object dữ liệu tĩnh (danh sách kỹ năng)
+const danhSachKyNang = [
+  { stt: 1, tenKyNang: "Thiết kế cấu trúc", congNghe: "HTML5", mucDo: "Tốt" },
+  {
+    stt: 2,
+    tenKyNang: "Định dạng giao diện",
+    congNghe: "CSS3 / SCSS",
+    mucDo: "Khá",
+  },
+  {
+    stt: 3,
+    tenKyNang: "Lập trình tương tác",
+    congNghe: "JavaScript",
+    mucDo: "Cơ bản",
+  },
+];
 
-let kiemTraSinhVien = laSinhVien === true;
-console.log("Kiểm tra laSinhVien === true:", kiemTraSinhVien);
+// 2. Viết hàm arrow function kết hợp map() để render danh sách kỹ năng ra DOM
+const renderSkills = (skills) => {
+  const tbody = document.getElementById("skills-tbody");
+  if (!tbody) return;
 
-console.log("Kiểu dữ liệu của hoTen:", typeof hoTen);
-console.log("Kiểu dữ liệu của namSinh:", typeof namSinh);
-console.log("Kiểu dữ liệu của laSinhVien:", typeof laSinhVien);
-
-const truongHoc = "Đại học Văn Hiến";
-console.log("Trường học:", truongHoc);
-
-// Đã comment dòng lỗi cố tình ở bài trước để code bên dưới có thể chạy được
-// truongHoc = "Đại học khác";
-
-const phanLoaiDiem = (diem) => {
-  if (diem >= 8) {
-    return "Giỏi";
-  } else if (diem >= 6.5) {
-    return "Khá";
-  } else if (diem >= 5) {
-    return "Trung bình";
-  } else {
-    return "Yếu";
-  }
+  tbody.innerHTML = "";
+  skills.map((skill) => {
+    const tr = document.createElement("tr");
+    tr.innerHTML = `
+      <td>${skill.stt}</td>
+      <td>${skill.tenKyNang}</td>
+      <td>${skill.congNghe}</td>
+      <td>${skill.mucDo}</td>
+    `;
+    tbody.appendChild(tr);
+  });
 };
 
-let danhSachDiem = [9, -2, 4.5, -5, 7.5, 6, 8.5];
+// 3. Xử lý sự kiện khi DOM đã tải xong
+document.addEventListener("DOMContentLoaded", () => {
+  // Hiển thị danh sách kỹ năng lên bảng
+  renderSkills(danhSachKyNang);
 
-console.log("--- BẢNG PHÂN LOẠI ĐIỂM (ĐÃ BỎ QUA ĐIỂM ÂM) ---");
-for (let i = 0; i < danhSachDiem.length; i++) {
-  let diemHienTai = danhSachDiem[i];
-  if (diemHienTai < 0) {
-    continue;
+  // Xử lý sự kiện submit form bằng addEventListener và validate bằng JavaScript
+  const form = document.getElementById("contact-form");
+  if (form) {
+    form.addEventListener("submit", (event) => {
+      event.preventDefault(); // Chặn form tự động reload trang
+
+      let isValid = true;
+
+      // Lấy giá trị các ô input
+      const fullname = document.getElementById("fullname").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+      const dob = document.getElementById("dob").value.trim();
+
+      // Lấy các phần tử hiển thị lỗi và thông báo thành công
+      const errFullname = document.getElementById("error-fullname");
+      const errEmail = document.getElementById("error-email");
+      const errPhone = document.getElementById("error-phone");
+      const errDob = document.getElementById("error-dob");
+      const successMsg = document.getElementById("form-success-msg");
+
+      // Reset nội dung thông báo cũ
+      errFullname.textContent = "";
+      errEmail.textContent = "";
+      errPhone.textContent = "";
+      errDob.textContent = "";
+      successMsg.textContent = "";
+
+      // Validate Họ tên: không được trống, tối thiểu 2 ký tự
+      if (fullname === "") {
+        errFullname.textContent = "Họ và tên không được để trống.";
+        isValid = false;
+      } else if (fullname.length < 2) {
+        errFullname.textContent = "Họ và tên phải có ít nhất 2 ký tự.";
+        isValid = false;
+      }
+
+      // Validate Email: kiểm tra định dạng cơ bản chứa '@' và '.'
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (email === "") {
+        errEmail.textContent = "Email không được để trống.";
+        isValid = false;
+      } else if (!emailRegex.test(email)) {
+        errEmail.textContent =
+          "Email không đúng định dạng (ví dụ: name@example.com).";
+        isValid = false;
+      }
+
+      // Validate Số điện thoại: đúng 10 hoặc 11 chữ số
+      const phoneRegex = /^[0-9]{10,11}$/;
+      if (phone === "") {
+        errPhone.textContent = "Số điện thoại không được để trống.";
+        isValid = false;
+      } else if (!phoneRegex.test(phone)) {
+        errPhone.textContent =
+          "Số điện thoại phải bao gồm đúng 10 hoặc 11 chữ số.";
+        isValid = false;
+      }
+
+      // Validate Ngày sinh: không được để trống
+      if (dob === "") {
+        errDob.textContent = "Vui lòng chọn ngày sinh.";
+        isValid = false;
+      }
+
+      // Nếu tất cả dữ liệu hợp lệ
+      if (isValid) {
+        successMsg.textContent = "Đăng ký thông tin thành công!";
+        console.log("Dữ liệu form hợp lệ:", { fullname, email, phone, dob });
+      }
+    });
   }
+});
 
-  let hocLuc = phanLoaiDiem(diemHienTai);
-  console.log("Điểm: " + diemHienTai + " - Học lực: " + hocLuc);
-}
+// ==================== CÂU 3 - KẾT THÚC ====================

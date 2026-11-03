@@ -9,7 +9,6 @@
   </head>
   <body>
     <header>
-      <!-- ==================== CÂU 2 - BẮT ĐẦU ==================== -->
       <div class="navbar">
         <h1>Hồ Sơ Cá Nhân</h1>
         <nav>
@@ -19,7 +18,6 @@
           <a href="#contact">Liên hệ</a>
         </nav>
       </div>
-      <!-- ==================== CÂU 2 - KẾT THÚC ==================== -->
     </header>
 
     <main>
@@ -40,6 +38,7 @@
         </article>
       </section>
 
+      <!-- ==================== CÂU 3 - BẮT ĐẦU (PHẦN HTML) ==================== -->
       <section id="skills">
         <h2>Kỹ năng và Học tập</h2>
         <table>
@@ -51,25 +50,8 @@
               <th>Mức độ</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Thiết kế cấu trúc</td>
-              <td>HTML5</td>
-              <td>Tốt</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Định dạng giao diện</td>
-              <td>CSS3 / SCSS</td>
-              <td>Khá</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td>Lập trình tương tác</td>
-              <td>JavaScript</td>
-              <td>Cơ bản</td>
-            </tr>
+          <tbody id="skills-tbody">
+            <!-- Dữ liệu kỹ năng được render động bằng JavaScript -->
           </tbody>
         </table>
       </section>
@@ -81,43 +63,82 @@
 
       <section id="contact">
         <h2>Liên hệ với tôi</h2>
-        <form action="#" method="POST">
+        <form id="contact-form" action="#" method="POST" novalidate>
           <fieldset>
             <legend>Đăng ký nhận tin</legend>
+
             <label for="fullname">Họ và tên: *</label>
-            <input
-              type="text"
-              id="fullname"
-              name="fullname"
-              required
-              minlength="2"
-            />
+            <input type="text" id="fullname" name="fullname" minlength="2" />
+            <small
+              id="error-fullname"
+              style="
+                color: crimson;
+                display: block;
+                margin-top: 2px;
+                margin-bottom: 8px;
+              "
+            ></small>
 
             <label for="email">Email: *</label>
-            <input type="email" id="email" name="email" required />
+            <input type="email" id="email" name="email" />
+            <small
+              id="error-email"
+              style="
+                color: crimson;
+                display: block;
+                margin-top: 2px;
+                margin-bottom: 8px;
+              "
+            ></small>
 
             <label for="phone">Số điện thoại: *</label>
             <input
               type="tel"
               id="phone"
               name="phone"
-              required
               pattern="[0-9]{10,11}"
               title="Nhập 10 hoặc 11 chữ số"
             />
+            <small
+              id="error-phone"
+              style="
+                color: crimson;
+                display: block;
+                margin-top: 2px;
+                margin-bottom: 8px;
+              "
+            ></small>
 
             <label for="dob">Ngày sinh: *</label>
-            <input type="date" id="dob" name="dob" required />
+            <input type="date" id="dob" name="dob" />
+            <small
+              id="error-dob"
+              style="
+                color: crimson;
+                display: block;
+                margin-top: 2px;
+                margin-bottom: 8px;
+              "
+            ></small>
+
+            <div
+              id="form-success-msg"
+              style="color: #16a34a; font-weight: bold; margin-bottom: 10px"
+            ></div>
 
             <button type="submit">Gửi thông tin</button>
             <button type="reset">Xóa form</button>
           </fieldset>
         </form>
       </section>
+      <!-- ==================== CÂU 3 - KẾT THÚC (PHẦN HTML) ==================== -->
     </main>
 
     <footer>
       <p>&copy; 2026 Vũ Tấn Phát. Thực hành Lập trình Web.</p>
     </footer>
+
+    <!-- Liên kết file JavaScript -->
+    <script src="js/script.js" defer></script>
   </body>
 </html>
