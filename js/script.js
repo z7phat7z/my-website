@@ -1,4 +1,4 @@
-// ==================== PHẦN 4 - BẮT ĐẦU ====================
+// ==================== CÂU 5 - BẮT ĐẦU ====================
 
 // 1. Khai báo mảng object dữ liệu tĩnh (danh sách kỹ năng)
 const danhSachKyNang = [
@@ -176,4 +176,4 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// ==================== PHẦN 4 - KẾT THÚC ====================
+// ==================== CÂU 5 - KẾT THÚC ====================
