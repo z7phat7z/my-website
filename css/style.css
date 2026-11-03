@@ -1,4 +1,4 @@
-/* ==================== CÂU 2 - BẮT ĐẦU ==================== */
+/* ==================== PHẦN 4 - BẮT ĐẦU ==================== */
 *,
 *::before,
 *::after {
@@ -12,6 +12,9 @@ body {
   background-color: #f8fafc;
   color: #1e293b;
   line-height: 1.6;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 
 header {
@@ -37,6 +40,7 @@ header .navbar nav {
   gap: 16px;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
 }
 header .navbar nav a {
   color: #93c5fd;
@@ -62,6 +66,9 @@ main section {
   padding: 24px;
   border-radius: 8px;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 main section h2 {
   color: #1a2e5a;
@@ -154,6 +161,50 @@ main section form fieldset button[type="reset"]:hover {
   background-color: #cbd5e1;
 }
 
+/* Giao diện Dark Mode */
+body.dark-mode {
+  background-color: #0f172a;
+  color: #f8fafc;
+}
+body.dark-mode header {
+  background-color: #020617;
+}
+body.dark-mode main section {
+  background: #1e293b;
+  color: #f8fafc;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
+}
+body.dark-mode main section h2 {
+  color: #60a5fa;
+  border-bottom-color: #334155;
+}
+body.dark-mode main section table th {
+  background-color: #020617;
+  color: #ffffff;
+}
+body.dark-mode main section table td,
+body.dark-mode main section table th {
+  border-color: #334155;
+}
+body.dark-mode main section table tr:nth-child(even) {
+  background-color: #1e293b;
+}
+body.dark-mode main section form fieldset {
+  border-color: #334155;
+}
+body.dark-mode main section form fieldset legend {
+  color: #60a5fa;
+}
+body.dark-mode main section form fieldset input {
+  background-color: #0f172a;
+  color: #f8fafc;
+  border-color: #334155;
+}
+body.dark-mode footer {
+  background-color: #020617;
+  color: #94a3b8;
+}
+
 footer {
   text-align: center;
   padding: 24px;
@@ -196,4 +247,4 @@ footer {
     grid-column: span 2;
   }
 }
-/* ==================== CÂU 2 - KẾT THÚC ==================== */
+/* ==================== PHẦN 4 - KẾT THÚC ==================== */

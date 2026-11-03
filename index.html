@@ -16,6 +16,21 @@
           <a href="#skills">Kỹ năng</a>
           <a href="#projects">Dự án</a>
           <a href="#contact">Liên hệ</a>
+          <!-- Nút chuyển đổi Dark Mode (Phần 4) -->
+          <button
+            id="dark-mode-toggle"
+            style="
+              background: none;
+              border: 1px solid #93c5fd;
+              color: #93c5fd;
+              padding: 4px 10px;
+              border-radius: 4px;
+              cursor: pointer;
+              font-weight: 500;
+            "
+          >
+            Dark Mode
+          </button>
         </nav>
       </div>
     </header>
@@ -38,7 +53,6 @@
         </article>
       </section>
 
-      <!-- ==================== CÂU 3 - BẮT ĐẦU (PHẦN HTML) ==================== -->
       <section id="skills">
         <h2>Kỹ năng và Học tập</h2>
         <table>
@@ -56,10 +70,27 @@
         </table>
       </section>
 
+      <!-- ==================== PHẦN 4 - BẮT ĐẦU (PHẦN HTML) ==================== -->
       <section id="projects">
         <h2>Dự án đã thực hiện</h2>
-        <!-- Danh sách dự án -->
+        <!-- Thông báo lỗi khi fetch thất bại -->
+        <div
+          id="projects-error"
+          style="color: crimson; margin-bottom: 12px; font-weight: 500"
+        ></div>
+        <!-- Khu vực hiển thị danh sách dự án render từ data.json -->
+        <div
+          id="projects-list"
+          style="
+            display: grid;
+            gap: 16px;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+          "
+        >
+          <!-- Dữ liệu dự án sẽ được nạp ở đây bằng JavaScript -->
+        </div>
       </section>
+      <!-- ==================== PHẦN 4 - KẾT THÚC (PHẦN HTML) ==================== -->
 
       <section id="contact">
         <h2>Liên hệ với tôi</h2>
@@ -131,7 +162,6 @@
           </fieldset>
         </form>
       </section>
-      <!-- ==================== CÂU 3 - KẾT THÚC (PHẦN HTML) ==================== -->
     </main>
 
     <footer>
